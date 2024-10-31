@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="/store.css">
+    <title>Document</title>
+</head>
+<body>
+      <h1 style="color: aliceblue;" >Giftcard category</h1>
+     <ul class="productlist">
+  {{#each getgiftcard}}
+    <li class="product-item">
+        <a href="/giftcard/{{this._id}}">
+     <img src="{{this.image}}" alt="image product"  class="product-image">
+      <h1 class="product-title">{{this.name}}</h1>
+      <p class="product-price">price: {{this.price}}</p>
+
+        </a>
+    </li>                   
+
+
+  {{/each}}
+</body>
+</html>

@@ -1,0 +1,191 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="/store.css">
+    <title>Document</title>
+</head>
+<body>
+      <h1 style="color: aliceblue;">product list</h1>
+ 
+       {{#if searchitem.length}} 
+   <ul>
+  {{#each searchitem}}
+  <form action="/add-to-bascket" method="post" class="all-product" id="productForm">
+    <div class="product-container">
+      <img src="{{this.image}}" alt="image product" class="product-image">
+      <div class="product-details">
+        <h1 class="product-title">{{this.name}}</h1>
+        <p class="product-price">Price: {{this.price}}</p>
+        <p class="product-description">{{this.descreaption}}</p>
+
+        <!-- Hidden inputs to send product details to the server -->
+        <input type="hidden" name="id" value="{{this._id}}">
+        <input type="hidden" name="image" value="{{this.image}}">
+        <input type="hidden" name="name" value="{{this.name}}">
+        <input type="hidden" name="price" value="{{this.price}}"> 
+        <input type="hidden" name="description" value="{{this.description}}">
+
+        <button class="btn-basket" type="submit">Add to Basket</button>
+      </div>
+    </div>
+  </form> 
+  {{/each}}
+  </ul>
+{{/if}}
+  
+
+
+{{#if xboxsearch.length}} 
+   <ul>
+  {{#each xboxsearch}}
+  <form action="/add-to-bascket" method="post" class="all-product" id="productForm">
+    <div class="product-container">
+      <img src="{{this.image}}" alt="image product" class="product-image">
+      <div class="product-details">
+        <h1 class="product-title">{{this.name}}</h1>
+        <p class="product-price">Price: {{this.price}}</p>
+        <p class="product-description">{{this.descreaption}}</p>
+
+        <!-- Hidden inputs to send product details to the server -->
+        <input type="hidden" name="id" value="{{this._id}}">
+        <input type="hidden" name="image" value="{{this.image}}">
+        <input type="hidden" name="name" value="{{this.name}}">
+        <input type="hidden" name="price" value="{{this.price}}"> 
+        <input type="hidden" name="description" value="{{this.description}}">
+
+        <button class="btn-basket" type="submit">Add to Basket</button>
+      </div>
+    </div>
+  </form> 
+  {{/each}}
+  </ul>
+{{/if}}
+
+
+
+
+
+
+     {{#if productsgame}}
+    <!-- Form for adding product to basket -->
+    <form action="/api/basket/add-to-bascket" method="post" class="all-product" id="productForm">
+    <div class="product-container" >
+        <img src="{{productsgame.image}}" alt="image product" class="product-image" >
+        <div class="product-details">
+        <h1 class="product-title" >{{productsgame.name}}</h1>
+        <p  class="product-price" > Price: {{productsgame.price}}</p>
+        <p class="product-description" >{{productsgame.descreaption}}</p>
+
+
+
+    
+         
+        <input type="hidden" name="id" value="{{productsgame._id}}">
+        <input type="hidden" name="image" value="{{productsgame.image}}"> 
+        <input type="hidden" name="name" value="{{productsgame.name}}">
+        <input type="hidden" name="price" value="{{productsgame.price}}"> 
+        <input type="hidden" name="description" value="{{productsgame.description}}">
+
+        <button class="btn-basket" type="submit">add to basket</button>
+      </div>
+     </div>
+    </form>
+     {{/if}}
+      
+{{#if ps5gameid}} 
+  <form action="/api/basket/add-to-bascket" method="post" class="all-product" id="productForm">
+    <div class="product-container">
+      <img src="{{ps5gameid.image}}" alt="image product" class="product-image">
+      <div class="product-details">
+        <h1 class="product-title">{{ps5gameid.name}}</h1>
+        <p class="product-price">Price: {{ps5gameid.price}}</p>
+        <p class="product-description">{{ps5gameid.descreaption}}</p>
+
+        <!-- Hidden inputs to send product details to the server -->
+        <input type="hidden" name="id" value="{{ps5gameid._id}}">
+        <input type="hidden" name="image" value="{{ps5gameid.image}}">
+        <input type="hidden" name="name" value="{{ps5gameid.name}}">
+        <input type="hidden" name="price" value="{{ps5gameid.price}}"> 
+        <input type="hidden" name="description" value="{{ps5gameid.description}}">
+
+        <button class="btn-basket" type="submit">Add to Basket</button>
+      </div>
+    </div>
+  </form> 
+{{/if}}
+
+
+     
+{{#if xbgame}} 
+  <form action="/api/basket/add-to-bascket" method="post" class="all-product" id="productForm">
+    <div class="product-container">
+      <img src="{{xbgame.image}}" alt="image product" class="product-image">
+      <div class="product-details">
+        <h1 class="product-title">{{xbgame.name}}</h1>
+        <p class="product-price">Price: {{xbgame.price}}</p>
+        <p class="product-description">{{xbgame.descreaption}}</p>
+
+        <!-- Hidden inputs to send product details to the server -->
+        <input type="hidden" name="id" value="{{xbgame._id}}">
+        <input type="hidden" name="image" value="{{xbgame.image}}">
+        <input type="hidden" name="name" value="{{xbgame.name}}">
+        <input type="hidden" name="price" value="{{xbgame.price}}"> 
+        <input type="hidden" name="description" value="{{xbgame.description}}">
+
+        <button class="btn-basket" type="submit">Add to Basket</button>
+      </div>
+    </div>
+  </form> 
+{{/if}}
+
+
+{{#if microgame}} 
+  <form action="/api/basket/add-to-bascket" method="post" class="all-product" id="productForm">
+    <div class="product-container">
+      <img src="{{microgame.image}}" alt="image product" class="product-image">
+      <div class="product-details">
+        <h1 class="product-title">{{microgame.name}}</h1>
+        <p class="product-price">Price: {{microgame.price}}</p>
+        <p class="product-description">{{microgame.descreaption}}</p>
+
+        <!-- Hidden inputs to send product details to the server -->
+        <input type="hidden" name="id" value="{{microgame._id}}">
+        <input type="hidden" name="image" value="{{microgame.image}}">
+        <input type="hidden" name="name" value="{{microgame.name}}">
+        <input type="hidden" name="price" value="{{microgame.price}}"> 
+        <input type="hidden" name="description" value="{{microgame.description}}">
+
+        <button class="btn-basket" type="submit">Add to Basket</button>
+      </div>
+    </div>
+  </form> 
+{{/if}}
+
+
+{{#if gift}} 
+  <form action="/api/basket/add-to-bascket" method="post" class="all-product" id="productForm">
+    <div class="product-container">
+      <img src="{{gift.image}}" alt="image product" class="product-image">
+      <div class="product-details">
+        <h1 class="product-title">{{gift.name}}</h1>
+        <p class="product-price">Price: {{gift.price}}</p>
+        <p class="product-description">{{gift.descreaption}}</p>
+
+        <!-- Hidden inputs to send product details to the server -->
+        <input type="hidden" name="id" value="{{gift._id}}">
+        <input type="hidden" name="image" value="{{gift.image}}">
+        <input type="hidden" name="name" value="{{gift.name}}">
+        <input type="hidden" name="price" value="{{gift.price}}"> 
+        <input type="hidden" name="description" value="{{gift.description}}">
+
+        <button class="btn-basket" type="submit">Add to Basket</button>
+      </div>
+    </div>
+  </form> 
+{{/if}}
+
+</body>
+<script src="store.js" ></script>
+</html>

@@ -1,0 +1,165 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="/store.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
+    <title>فروشگاه و محصولات لوازم جانبی</title>
+</head>
+<body>
+
+
+
+  <!-- آیکون پشتیبانی -->
+  <div id="support-icon" class="hidden">
+    <img src="/images/support-icon.png" alt="Support" />
+  </div>
+
+
+
+     <form action="/search" method="GET" class="input-container">
+
+        <input name="term"  type="text" class="input-header" placeholder="search for the game">
+    <button type="submit" class="btn">
+        <i class="fas fa-search">
+        </i>  
+    </button>
+
+    </form>
+    
+    <div  class="header-container">
+
+    <button id="showBasketBtn" ><i  class="fa fa-shopping-cart" style="font-size:12px"></i></button>
+
+       
+<div class="navbar">
+    <ul>
+        <button class="btn-registery">
+            <a href="/templates/login.hbs">Login/Sign in</a>
+        </button>
+        <li><a href="/mainproduct" class="">main product</a></li>
+        <li><a href="/playstation-game" class="">Buy a ps5 game</a></li>
+        <li><a href="/xbox-game" class="">Buy a xbox game</a></li>
+        <li><a href="/gift-card" class="">Buy a gift card</a></li>
+        <li><a href="" class="">call with support</a></li>
+        <img src="/download.png" alt="logo" class="logo">
+    </ul>
+</div>
+
+    </div>
+
+
+
+    
+ <div id="basketContainer" style="display: none;" class="basket">
+  <ul id="basketList">
+    {{#each basketItems}}
+    <li class="basket-item">
+      <img src="{{this.image}}" alt="{{this.name}}" width="50" class="basket-item-image">
+      <div class="basket-item-details">
+        <p class="basket-item-name">Name: {{this.name}}</p>
+        <p class="basket-item-price">Price: ${{this.price}}</p>
+      </div>
+      <button class="deleteproductbasket">
+        <a href="api/basket/Delete-product/{{this._id}}">Delete</a>
+      </button>
+    </li>
+    {{/each}}
+  </ul>
+
+  <h1 class="basket-total">${{basketTotal1}}</h1>
+  <form action="/api/basket/create-payment" method="post">
+    <button type="submit" class="payment-button">پرداخت</button>
+  </form>
+</div>
+
+
+  
+    
+
+
+    <section>
+        <div class="image-container">
+            <img src="/Slim1x1.jpg" alt="" class="image-section">
+            <img src="/S5555555555g.jpg" alt="" class="image-section2">
+            <img src="/71d4d17edcd49703a5ea446cc0e588e6.jpg" alt="" class ="image-section3" >
+        </div>
+
+        <div class="image-container2">
+         <a href="http://localhost:3000/game/6697f9da72b71cddc815d96b">
+            <img src="/wallpapersden.com_the-last-of-us-part-2-ps5_1600x9004785.jpg.webp"  class="image-section4" alt="">
+         </a>   
+         <a href="http://localhost:3000/game/6697f9da72b71cddc815d96d">
+            <img src="/27410333-afab-4fb3-b326-e5f3118313ca.avif" class="image-section5" alt="">
+         </a>
+       
+        </div>
+
+    </section> 
+
+
+<div class="container">
+  <a href="/playstation-game" class="see-more-button">see more...</a>
+  <h1 style="color:darkblue">بازی هایه پلی استیشن</h1>
+  <ul class="productlist">
+    {{#each products}}
+      <li class="product-item">
+        <a href="/game/{{this._id}}">
+          <img src="{{this.image}}" alt="image product" class="product-image">
+          <h1 class="product-title">{{this.name}}</h1>
+          <p class="product-price">price: {{this.price}}</p>
+        </a>
+      </li>
+    {{/each}}
+  </ul>
+</div>
+
+
+<div class="container">
+  <a href="/xbox-game" class="see-more-button">see more...</a>
+  <h1 style="color:rgb(61, 215, 9)">بازی هایه ایکس باکس</h1>
+  <ul class="productlist">
+    {{#each xboxgame}}
+      <li class="product-item">
+        <a href="/game/{{this._id}}">
+          <img src="{{this.image}}" alt="image product" class="product-image">
+          <h1 class="product-title">{{this.name}}</h1>
+          <p class="product-price">price: {{this.price}}</p>
+        </a>
+      </li>
+    {{/each}}
+  </ul>
+</div>
+
+
+
+
+<div class="container">
+  <a href="/gift-card" class="see-more-button">see more...</a>
+  <h1 style="color:rgb(61, 215, 9)">گیفت کارت هایه پلی استیشن</h1>
+  <ul class="productlist">
+    {{#each giftcards}}
+      <li class="product-item">
+        <a href="/giftcard/{{this._id}}">
+          <img src="{{this.image}}" alt="image product" class="product-image">
+          <h1 class="product-title">{{this.name}}</h1>
+          <p class="product-price">price: {{this.price}}</p>
+        </a>
+      </li>
+    {{/each}}
+  </ul>
+</div>
+
+
+
+
+
+
+    
+<a href="/protected">محصولات</a>
+
+
+</body>
+<script src="store.js"></script>
+</html>

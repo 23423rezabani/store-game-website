@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="/store.css">
+    <title>Document</title>
+</head>
+<body style="background-color: black;">
+
+    <h1 style="color: aliceblue;" >ps5 game category</h1>
+     <ul class="productlist">
+  {{#each uniqueps5game}}
+    <li class="product-item">
+        <a href="/ps5/{{this._id}}">
+     <img src="{{this.image}}" alt="image product"  class="product-image">
+      <h1 class="product-title">{{this.name}}</h1>
+      <p class="product-price">price: {{this.price}}</p>
+
+        </a>
+    </li>                   
+
+
+  {{/each}}
+</ul>
+</body>
+<script src="store.js" ></script>
+</html>
